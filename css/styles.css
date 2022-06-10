@@ -12,7 +12,7 @@
   --border-bottom-color: #ececec;
   --icon-color: #afb1b8;
   --time-function: cubic-bezier(0.4, 0, 0.2, 1);
-  --time-duration: 250ms;
+  --time-duration: 2250ms;
 }
 
 .visually-hidden {
@@ -517,6 +517,9 @@ body {
   padding-bottom: 16px;
 }
 .portfolio-filter {
+  transition: background-color var(--time-duration) var(--time-function),
+    color var(--time-duration) var(--time-function),
+    box-shadow var(--time-duration) var(--time-function);
   border: transparent;
   background: var(--team-background-color);
   border-radius: 4px;
@@ -538,6 +541,19 @@ body {
 .portfolio-filter-item + .portfolio-filter-item {
   margin-left: 8px;
 }
+.current-filter,
+.portfolio-filter:hover,
+.portfolio-filter:focus {
+  color: var(--background-color);
+  background-color: var(--accent-text-color);
+}
+
+.portfolio-filter:hover,
+.portfolio-filter:focus {
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+}
+
 .portfolio-project-list {
   display: flex;
   flex-wrap: wrap;
@@ -553,16 +569,19 @@ body {
   width: 100%;
   height: 100%;
 }
+.portfolio-project-link {
+  transition: border var(--time-duration) var(--time-function),
+    cursor var(--time-duration) var(--time-function),
+    box-shadow var(--time-duration) var(--time-function);
 
+  display: block;
+}
 .portfolio-project-link:hover,
 .portfolio-project-link:focus {
   border: 1px solid var(--border-color);
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
   cursor: pointer;
-}
-.portfolio-project-link {
-  display: block;
 }
 
 .portfolio-report {
@@ -578,18 +597,11 @@ body {
   margin-top: 30px;
 }
 
-.current-filter,
-.portfolio-filter:hover,
-.portfolio-filter:focus {
-  color: var(--background-color);
-  background-color: var(--accent-text-color);
+.project-back {
 }
-
-.portfolio-filter:hover,
-.portfolio-filter:focus {
-  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
-    0px 2px 2px rgba(0, 0, 0, 0.12);
-  border-radius: 4px;
+.project-back-box {
+}
+.project-back-text {
 }
 
 .portfolio-item-title {
